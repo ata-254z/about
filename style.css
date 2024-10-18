@@ -2,9 +2,13 @@
     font-family: roboto;
     src: url(Roboto-Regular.ttf);
 }
+span.size-32{
+    font-size: 4vh;
+    font-variation-settings: 'OPSZ' 24;
+}
 #body{
     height: 100%;
-    width: 100%;
+    width: calc(100% - 8vh);
     margin: 0%;
     position: absolute;
     right: 0%;
@@ -16,6 +20,7 @@ html{
     font-family: roboto;
     font-size: 14pt;
     color: #fff;
+    background-color: #ffffff;
 }
 #home{
     height: 70%;
@@ -27,17 +32,82 @@ html{
     width: 100%;
     display: flex;
     align-items: end;
-    background: #adebff;
+    background: #fff;
     background-image: url(banner.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
 }
-#keterangan{
+#aside{
+    width: 8vh;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+    border-radius: 0 24pt 24pt 0;
     background: #00171f;
+    box-shadow: rgba(14, 30, 37, 1) 0px 2px 4px 0px, rgba(14, 30, 37, 0.5) 0px 2px 16pt 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#aside button{
+    height: 32pt;
+    width: 32pt;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+#aside button img{
+    height: 4vh;
+    width: 4vh;
+}
+#aside button img:hover{
+    color-interpolation-filters: #adebff;
+}
+#ruang{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 5%);
+}
+#aside #ruang div div{
+    height: 2vh;
+}
+#keterangan{
+    background: #ffffff;
     height: 70%;
 }
 ::-webkit-scrollbar{
     width: 0;
+}
+.tooltip{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 60pt;
+    background-color: #00171f;
+    color: #adebff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 2;
+}
+.tooltip .tooltiptext{
+    top: 10px;
+    left: 130%;
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
 }
