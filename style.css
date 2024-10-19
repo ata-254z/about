@@ -1,4 +1,21 @@
-@font-face {
+/* CSS HEX
+--earth-yellow: #D89E53ff;
+--jasmine: #FEE199ff;
+--earth-yellow-2: #ECA54Aff;
+--brown: #934B07ff;
+*/
+@media only screen and (max-width: 425px){
+    #aside{
+        visibility: visible;
+    }
+    #body{
+        width: 100%;
+    }
+    #keterangan{
+        width: 100%;
+    }
+}
+@font-face{
     font-family: roboto;
     src: url(Roboto-Regular.ttf);
 }
@@ -20,19 +37,19 @@ html{
     font-family: roboto;
     font-size: 14pt;
     color: #fff;
-    background-color: #ffffff;
+    background-color: #934B07ff;
 }
 #home{
-    height: 70%;
+    height: 10%;
     width: 100%;
-    background: linear-gradient(#00171f00, #00171f);
+    background: linear-gradient(rgba(254, 225, 153, 0), #934B07ff);
 }
 #background{
-    height: 85%;
+    height: 96%;
     width: 100%;
     display: flex;
     align-items: end;
-    background: #fff;
+    background: #934B07ff;
     background-image: url(banner.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,7 +63,7 @@ html{
     z-index: 1;
     left: 0%;
     top: 0%;
-    border-radius: 0 24pt 24pt 0;
+    border-radius: 0 0pt 0pt 0;
     background: #00171f;
     box-shadow: rgba(14, 30, 37, 1) 0px 2px 4px 0px, rgba(14, 30, 37, 0.5) 0px 2px 16pt 0px;
     display: flex;
@@ -73,14 +90,17 @@ html{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: calc(100% - 5%);
+    height: calc(100% - 1%);
 }
 #aside #ruang div div{
     height: 2vh;
 }
 #keterangan{
-    background: #ffffff;
-    height: 70%;
+    background: #934B07ff;
+    height: 50%;
+    margin: 3vh;
+    display: flex;
+    gap: 3vh;
 }
 ::-webkit-scrollbar{
     width: 0;
@@ -103,8 +123,81 @@ html{
 }
 .tooltip .tooltiptext{
     top: 10px;
-    left: 130%;
+    left: 110%;
 }
 .tooltip:hover .tooltiptext{
     visibility: visible;
+}
+#deskripsi{
+    left: 0%;
+    top: 0%;
+    background: #FEE199ff;
+    height: 100%;
+    width: 50%;
+    border-radius: 24px;
+    padding: 18px;
+    color: #934B07ff;
+    font-size: 14pt;
+}
+#badge{
+    background: #FEE199ff;
+    top: 0%;
+    height: calc(40% + 1vh);
+    color: #934B07ff;
+    border-radius: 24px;
+    padding: 18px;
+}
+#map{
+    background: #FEE199ff;
+    color: #934B07ff;
+    padding: 18px;
+    border-radius: 24px;
+    height: calc(45% + 1vh);
+}
+#maps{
+    background: url("vt.png");
+    background-position-y: 80%;
+    background-position-x: 70%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+#info{
+    display: none;
+    background: #00171fda;
+    backdrop-filter: blur(2px);
+    height: 58vh;
+    width: 50vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 24px;
+    padding: 8pt;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#t-info{
+    height: 28pt;
+    width: 28pt;
+    border: none;
+    border-radius: 24pt;
+    background: #00171f;
+    color: #adebff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#isi-info{
+    height: 40vh;
+}
+#isi-info a{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 5pt;
+    margin-left: 1vh;
+    color: #adebff;
+    text-decoration: none;
 }
