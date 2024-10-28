@@ -1,31 +1,61 @@
-/* CSS HEX
---earth-yellow: #D89E53ff;
---jasmine: #FEE199ff;
---earth-yellow-2: #ECA54Aff;
---brown: #934B07ff;
-*/
-@media only screen and (max-width: 425px){
-    #aside{
-        visibility: visible;
-    }
-    #body{
-        width: 100%;
-    }
-    #keterangan{
-        width: 100%;
-    }
+::selection {
+    background-color: #adebff;
+    color: #00171f;
 }
-@font-face{
-    font-family: roboto;
-    src: url(Roboto-Regular.ttf);
+
+::-moz-selection { /* Firefox */
+    background-color: #adebff;
+    color: #00171f;
+}
+
+::-webkit-selection { /* Safari */
+    background-color: #adebff;
+    color: #00171f;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+@font-face {
+    font-family: jogja;
+    src: url(Jogjakartype.ttf);
+}
+@media only screen and (max-width:425px) {
+    .tutup{
+        visibility: hidden;
+    }
+    .keterangan{
+        flex-direction: column;
+        align-items: center;
+    }
+    .keterangan article{
+        width: 70%;
+    }
+    .keterangan article article{
+        width: 100%;
+    }
 }
 span.size-32{
     font-size: 4vh;
     font-variation-settings: 'OPSZ' 24;
 }
-#body{
+.body{
     height: 100%;
-    width: calc(100% - 6vh);
+    width: 100%;
     margin: 0%;
     position: absolute;
     right: 0%;
@@ -34,35 +64,44 @@ span.size-32{
 html{
     height: 100%;
     width: 100%;
-    font-family: roboto;
     font-size: 14pt;
     color: #fff;
-    background-color: #934B07ff;
+    background-color: #00171f;
+    overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+header{
+    z-index: 1;
+    position: relative;
 }
 #home{
     height: 10%;
     width: 100%;
-    background: linear-gradient(rgba(254, 225, 153, 0), #934B07ff);
+    z-index: 0;
 }
 #background{
-    height: 96%;
+    height: calc(96% - 4vh);
     width: 100%;
     display: flex;
     align-items: end;
-    background: #934B07ff;
-    background-image: url(banner.png);
+    background: #003459;
+    background-image: url(banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
+    z-index: -1;
 }
-#aside{
-    width: 6vh;
+.aside{
+    visibility: hidden;
+    width: 100pt;
     height: 100%;
     position: fixed;
-    z-index: 1;
-    left: 0%;
+    right: 0%;
     top: 0%;
+    z-index: 5;
     border-radius: 0 0pt 0pt 0;
     background: #00171f;
     box-shadow: rgba(14, 30, 37, 1) 0px 2px 4px 0px, rgba(14, 30, 37, 0.5) 0px 2px 16pt 0px;
@@ -70,9 +109,9 @@ html{
     justify-content: center;
     align-items: center;
 }
-#aside button{
+#ruang button, .button{
     height: 32pt;
-    width: 32pt;
+    width: auto;
     background: none;
     border: none;
     display: flex;
@@ -80,27 +119,46 @@ html{
     justify-content: center;
     color: #fff;
     cursor: pointer;
+    gap: 5pt;
 }
-#aside button img{
+.aside button img{
     height: 4vh;
     width: 4vh;
 }
+.aside a{
+    width: 100%;
+    text-decoration: none;
+}
+.tutup{
+    height: 100%;
+    width: calc(100% - 100pt);
+    position: fixed;
+    left: 0;
+    background: none;
+    border: none;
+}
 #ruang{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     height: calc(100% - 1%);
 }
-#aside #ruang div div{
+.aside #ruang div div{
     height: 2vh;
 }
-#keterangan{
-    background: #934B07ff;
+#ruang button:hover, #ruang div a:hover{
+    color: #adebff;
+}
+.keterangan{
+    background: #00171f;
     height: 50%;
-    margin: 3vh;
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 3vh;
+    z-index: 2;
+    position: relative;
 }
 ::-webkit-scrollbar{
     width: 0;
@@ -124,32 +182,39 @@ html{
 .tooltip .tooltiptext{
     top: 10px;
     left: 110%;
+    position: absolute;
 }
 .tooltip:hover .tooltiptext{
     visibility: visible;
+    z-index: 2;
 }
-#deskripsi{
-    left: 0%;
-    top: 0%;
-    background: #FEE199ff;
-    height: 100%;
+.deskripsi{
+    left: 4pt;
+    top: 26pt;
+    position: relative;
+    background: #003459;
+    height: max-content;
     width: 50%;
     border-radius: 24px;
-    padding: 18px;
-    color: #934B07ff;
+    padding: 20px;
+    color: #adebff;
     font-size: 14pt;
 }
 #badge{
-    background: #FEE199ff;
-    top: 0%;
-    height: calc(40% + 1vh);
-    color: #934B07ff;
+    background: #003459;
+    top: 26pt;
+    right: 4pt;
+    position: relative;
+    height: max-content;
+    color: #adebff;
     border-radius: 24px;
-    padding: 18px;
+    padding: 20px;
+    height: max-content;
+    width: 40%;
 }
 #map{
-    background: #FEE199ff;
-    color: #934B07ff;
+    background: #003459;
+    color: #adebff;
     padding: 18px;
     border-radius: 24px;
     height: calc(45% + 1vh);
@@ -164,11 +229,12 @@ html{
     width: 100%;
 }
 #info{
+    z-index: 99;
     display: none;
     background: #00171fda;
     backdrop-filter: blur(2px);
-    height: 58vh;
-    width: 50vh;
+    height: 280pt;
+    width: 240pt;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -200,4 +266,40 @@ html{
     margin-left: 1vh;
     color: #adebff;
     text-decoration: none;
+}
+#judul{
+    position: fixed;
+    top: calc(0% + 26pt);
+    left: calc(0% + 24pt);
+    font-family: jogja;
+    font-size: 20pt;
+}
+.hamburger{
+    top: calc(0% + 16pt);
+    right: calc(0% + 18pt);
+    position: fixed;
+}
+#figure{
+    position: absolute;
+    bottom: 0%;
+    right: 50%;
+    transform: translate(50%,0%);
+    height: 360pt;
+    width: auto;
+    z-index: -1;
+}
+#shadow{
+    background: linear-gradient(#00171f00, #00171f);
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    bottom: 0%;
+}
+.merah-putih {
+    background: linear-gradient(to bottom, rgb(255, 36, 36) 52%, white 48%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.spasi{
+    height: 6pt;
 }
