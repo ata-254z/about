@@ -1,13 +1,12 @@
+html{overflow-x: hidden;}
 ::selection {
     background-color: #adebff;
     color: #00171f;
 }
-
 ::-moz-selection { /* Firefox */
     background-color: #adebff;
     color: #00171f;
 }
-
 ::-webkit-selection { /* Safari */
     background-color: #adebff;
     color: #00171f;
@@ -34,24 +33,12 @@
     font-family: jogja;
     src: url(Jogjakartype.ttf);
 }
-@media only screen and (max-width:425px) {
-    .tutup{
-        visibility: hidden;
-    }
-    .keterangan{
-        flex-direction: column;
-        align-items: center;
-    }
-    .keterangan article{
-        width: 70%;
-    }
-    .keterangan article article{
-        width: 100%;
-    }
-}
 span.size-32{
     font-size: 4vh;
     font-variation-settings: 'OPSZ' 24;
+}
+#a{
+    text-decoration: none;
 }
 .body{
     height: 100%;
@@ -96,7 +83,7 @@ header{
 }
 .aside{
     visibility: hidden;
-    width: 100pt;
+    width: 120pt;
     height: 100%;
     position: fixed;
     right: 0%;
@@ -109,7 +96,7 @@ header{
     justify-content: center;
     align-items: center;
 }
-#ruang button, .button{
+#ruang button, #button{
     height: 32pt;
     width: auto;
     background: none;
@@ -120,6 +107,7 @@ header{
     color: #fff;
     cursor: pointer;
     gap: 5pt;
+    outline-style: none;
 }
 .aside button img{
     height: 4vh;
@@ -127,15 +115,15 @@ header{
 }
 .aside a{
     width: 100%;
-    text-decoration: none;
+    font-size: medium;
 }
-.tutup{
+.ttp{
     height: 100%;
-    width: calc(100% - 100pt);
-    position: fixed;
-    left: 0;
+    width: 100%;
     background: none;
     border: none;
+    position: fixed;
+    z-index: 2;
 }
 #ruang{
     display: flex;
@@ -152,49 +140,23 @@ header{
 }
 .keterangan{
     background: #00171f;
-    height: 50%;
+    height: max-content;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 3vh;
-    z-index: 2;
     position: relative;
+    flex-direction: column;
+    align-items: center;
 }
 ::-webkit-scrollbar{
-    width: 0;
-}
-.tooltip{
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-.tooltip .tooltiptext{
-    visibility: hidden;
-    width: 60pt;
-    background-color: #00171f;
-    color: #adebff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 2;
-}
-.tooltip .tooltiptext{
-    top: 10px;
-    left: 110%;
-    position: absolute;
-}
-.tooltip:hover .tooltiptext{
-    visibility: visible;
-    z-index: 2;
+    width: 2pt;
 }
 .deskripsi{
-    left: 4pt;
-    top: 26pt;
-    position: relative;
+    position: relaative;
     background: #003459;
     height: max-content;
-    width: 50%;
+    width: 80%;
     border-radius: 24px;
     padding: 20px;
     color: #adebff;
@@ -202,39 +164,28 @@ header{
 }
 #badge{
     background: #003459;
-    top: 26pt;
-    right: 4pt;
     position: relative;
     height: max-content;
     color: #adebff;
     border-radius: 24px;
     padding: 20px;
     height: max-content;
-    width: 40%;
+    width: 80%;
 }
-#map{
-    background: #003459;
-    color: #adebff;
-    padding: 18px;
-    border-radius: 24px;
-    height: calc(45% + 1vh);
+.ket{
+    visibility: collapse;
+    position: absolute;
+    z-index: 2;
 }
-#maps{
-    background: url("vt.png");
-    background-position-y: 80%;
-    background-position-x: 70%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 100%;
+.Social:hover, #roblox a button:hover, .instagram:hover, .guilded:hover{
+    transform: translateY(-2pt);
 }
 #info{
     z-index: 99;
     display: none;
-    background: #00171fda;
-    backdrop-filter: blur(2px);
-    height: 280pt;
-    width: 240pt;
+    background: #00171ff6;
+    height: 180pt;
+    width: 220pt;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -257,6 +208,7 @@ header{
 }
 #isi-info{
     height: 40vh;
+    color: #adebff;
 }
 #isi-info a{
     display: flex;
@@ -265,7 +217,6 @@ header{
     gap: 5pt;
     margin-left: 1vh;
     color: #adebff;
-    text-decoration: none;
 }
 #judul{
     position: fixed;
@@ -273,17 +224,21 @@ header{
     left: calc(0% + 24pt);
     font-family: jogja;
     font-size: 20pt;
+    color: #fff;
+    text-shadow: 0px 0px 8px #00171f;
 }
 .hamburger{
     top: calc(0% + 16pt);
     right: calc(0% + 18pt);
     position: fixed;
+    outline-style: none;
+    visibility: hidden;
 }
-#figure{
+.figure{
     position: absolute;
     bottom: 0%;
     right: 50%;
-    transform: translate(50%,0%);
+    transform: translate(50%);
     height: 360pt;
     width: auto;
     z-index: -1;
@@ -294,6 +249,9 @@ header{
     z-index: 3;
     height: 100%;
     bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .merah-putih {
     background: linear-gradient(to bottom, rgb(255, 36, 36) 52%, white 48%);
@@ -302,4 +260,183 @@ header{
 }
 .spasi{
     height: 6pt;
+}
+#slide{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.base{height: max-content; width: 80%;
+    background: #003459;
+    padding: 20px;
+    border-radius: 24px;
+}
+.z{z-index: 4; position: absolute;}
+.carousel-item img{
+    border-radius: 16px;
+}
+#footer{
+    padding: 24px 20px 20px 20px;
+    height: max-content;
+    background: #003459;
+    color: #adebff;
+}
+#infbtn{
+    background: #adebff;
+    color: #00171f;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    outline-style: none;
+    font-weight: normal;
+    height: 6vh;
+}
+@media only screen and (max-width: 425px) {
+    .figure{height: 290pt;}
+}
+@media only screen and (max-width: 625px) {
+    #chat{
+        flex-direction: column;
+        justify-content: center;
+    }
+    #chat a{
+        width: 100%;
+    }
+    #sp{display: flex; justify-content: center;}
+}
+#chat{
+    height: max-content;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 6px;
+    color: #fff;
+}
+#chat a{
+    flex-grow: 1;
+    text-decoration: none;
+    outline-style: none;
+}
+
+.guilded{
+    border-radius: 24px;
+    padding: 12px;
+    background-color: #FEDE00;
+    background-image: url(guilded.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90pt;
+    display: flex;
+    color: #37474f;
+    justify-content: space-between;
+    align-items: end;
+}
+.instagram{
+    border-radius: 24px;
+    padding: 12px;
+    height: 90pt;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    background-image: url(instagram.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fd1d1d;
+}
+#sosi{
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+#sosi a{
+    flex-grow: 1;
+    flex-basis: 200;
+    text-decoration: none;
+}
+.Social{
+    height: 70pt;
+    color: #fff;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 6px;
+    font-size: 12pt;
+    font-weight: bold;
+    text-shadow: 0px 0px 8px #00171f;
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+#roblox{
+    height: max-content;
+}
+#roblox a{text-decoration: none;}
+#roblox a button{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 6px;
+    color: #fff;
+    border-radius: 24px;
+    border: none;
+    outline-style: none;
+    background: #00171f;
+}
+@font-face {
+    font-family: ro-font;
+    src: url(Roblox.ttf);
+}
+.rf{font-family: ro-font; font-size: larger;}
+.facebook{
+    background-color: #2d64fa; 
+    background-image: url('icons8-facebook.svg');
+}
+.youtube{
+    background-color: red; 
+    background-image: url('icons8-youtube.svg');
+}
+.github{
+    background-color: #020708; 
+    background-image: url('icons8-github.svg');
+}
+.facebook, .youtube, .github{
+    background-repeat: no-repeat;
+    background-size: 36pt;
+}
+#game{
+    height: max-content;
+    width: 80%;
+    background: #003459;
+    border-radius: 24px;
+    padding: 20px;
+}
+#scrollbtn{
+    position: absolute;
+    color: #adebff;
+    background: transparent;
+    border: none;
+    outline-style: none;
+    z-index: 5;
+    bottom: 16pt;
+    left: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2pt;
+    transform: translateX(-50%);
 }

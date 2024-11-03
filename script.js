@@ -6,7 +6,6 @@ function tutup() {
 }
 function side() {
     document.querySelector('.aside').style.visibility= "visible";
-    document.querySelector
 }
 function cside() {
     document.querySelector('.aside').style.visibility= "hidden";
@@ -14,3 +13,6 @@ function cside() {
 window.addEventListener('scroll', function() {
     window.scrollTo(0, window.scrollY);
 });
+function scrollPageDown() {
+    window.scrollTo(0, 581);
+}
