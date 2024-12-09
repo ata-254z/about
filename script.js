@@ -9,7 +9,7 @@ window.addEventListener('scroll', function() {
 });
 function medsos() {
     window.scrollTo({
-        top: 581
+        top: 612
     });
 };
 function beranda() {

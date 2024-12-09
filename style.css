@@ -504,7 +504,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: end;
-    background-image: url(instagram.jpg);
+    background-image: url(ig.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -565,14 +565,14 @@ header{
     background-color: red; 
     background-image: url('icons8-youtube.svg');
 }
-.github{
+.tiktok{
     background-color: #020708; 
     border-width: 1px;
     border-color: #444;
     border-style: solid;
-    background-image: url('icons8-github.svg');
+    background-image: url('icons8-tiktok.png');
 }
-.facebook, .youtube, .github{
+.facebook, .youtube, .tiktok{
     background-repeat: no-repeat;
     background-size: 36pt;
 }
